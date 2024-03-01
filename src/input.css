@@ -2,8 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-family: "Fira Mono", monospace;
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");

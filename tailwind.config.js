@@ -7,6 +7,9 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        primary: ["Inconsolata"],
+      },
       colors: {
         primary: {
           200: "#1f202f",
