@@ -1,10 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
+
+export const projects = [
+  {
+    href: "https://github.com/rejarevaldy/4chan-clone",
+    title: "4chan Clone",
+    body: "A 4chan clone built with Flask and SQLite. ",
+  },
+];
 ---
 
 <Layout title="/home/revv/projects" />
-
 <main>
   <div class="container flex px-4 mx-auto my-24 h-full max-w-5xl">
     <div class="w-full">
@@ -12,7 +19,25 @@ import Footer from "../components/Footer.astro";
         <span class="text-accent font-bold mr-1"> | </span>
         Project
       </h1>
-      <div class="flex flex-cols w-full"></div>
+      <div class="flex flex-cols w-full">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-7 w-full">
+          {
+            projects.map((project) => (
+              <div class="p-3 border border-primary-200 rounded-lg shadow-lg hover:bg-primary-200 hover:bg-opacity-15 hover:border-b-4 hover:border-b-accent duration-200 ease-in-out transition-all grid place-items-center">
+                {" "}
+                <a href={project.href} target="_blank">
+                  <div class="px-6 py-5">
+                    <div class="font-bold text-3xl mb-2 text-secondary-300">
+                      {project.title}
+                    </div>
+                    <p class="text-base text-secondary-100">{project.body}</p>
+                  </div>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </main>
