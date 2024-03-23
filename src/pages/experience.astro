@@ -2,56 +2,198 @@
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import Footer from "../components/Footer.astro";
+export const experiences = [
+  {
+    title: "Experience",
+    items: [
+      {
+        title: "Bangkit Academy (Cloud Computing) - Apprenticeship",
+        date: "Feb 2024 - Present",
+        location: "Bandung, Jawa Barat, Indonesia · Remote",
+        company: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
+        description: "",
+      },
+      {
+        title: "Penetration Tester - Internship",
+        date: "Oct 2023 - Present",
+        location: "Indonesia · Remote",
+        company: "Pentester.ID",
+        description: "",
+      },
+      {
+        title: "Web Developer - Freelance",
+        date: "Feb 2023 - May 2023",
+        location: "Dumai, Riau, Indonesia · Remote",
+        company: "Multi Indonesia Group",
+        description: "",
+      },
+      {
+        title: "Web Developer - Freelance",
+        date: "Jul 2022 - Oct 2022",
+        location: "Indonesia · Hybrid",
+        company: "PT. Bunga Davi",
+        description: "",
+      },
+      {
+        title: "Web Developer - Freelance",
+        date: "Dec 2021 - Apr 2022",
+        location: "Indonesia · Remote",
+        company: "Capaian Output",
+        description: "",
+      },
+      {
+        title: "Web Developer - Internship",
+        date: "Aug 2021 - Nov 2021",
+        location: "Indonesia, Kalimantan Selatan · Remote",
+        company: "SMKN 2 Banjarmasin",
+        description: "",
+      },
+    ],
+  },
+  {
+    title: "Certifications & Licenses",
+    items: [
+      {
+        title: "KMIPN V - Keamanan Siber - Juara Harapan",
+        date: "Aug 2023",
+        company: "Politeknik Elektronika Negeri Surabaya",
+        credential_id: "6560.18/PL14/KM/2023",
+        credential_url:
+          "https://drive.google.com/file/d/1ou5pgNmZX-zEwiyEyvBweCqPJ9hr4fTZ/view?usp=sharing",
+      },
+      {
+        title: "KMIPN V - Keamanan Siber - Finalis",
+        date: "Jul 2023",
+        company: "Politeknik Elektronika Negeri Surabaya",
+        credential_id: "6560.02/PL14/KM/2023",
+        credential_url: "",
+      },
+      {
+        title: "Gemastik XV - Cyber Security",
+        date: "Dec 2022",
+        company: "Pusat Prestasi Nasional",
+        credential_id: "001/DIV 2/GXV/2022",
+        credential_url: "",
+      },
+      {
+        title: "BPJS Kesehatan HEALTHKATHON - Penetration Testing Student",
+        date: "Sep 2022",
+        company: "BPJS Kesehatan",
+        credential_id: "",
+        credential_url: "",
+      },
+      {
+        title:
+          "Certificate of Completion Cyber Security Training 2022 Sub-Batch 1",
+        date: "Jun 2022 - Expires Jun 2024",
+        company: "Akademi Digital Nusantara (ADINUSA)",
+        credential_id: "",
+        credential_url: "",
+      },
+      {
+        title:
+          "Level II KKNI Certification Scheme At the Competence of Software Engineering Skills",
+        date: "Jun 2022 - Expires Jun 2025",
+        company: "Badan Nasional Sertifikasi Profesi (BNSP)",
+        credential_id: "",
+        credential_url: "",
+      },
+      {
+        title: "Medallion for Excellence LKS Cyber Security Nasional",
+        date: "Oct 2021",
+        company: "LKS SMK",
+        credential_id: "2724/J3/DM.03.00/2021",
+        credential_url: "",
+      },
+    ],
+  },
+];
 ---
 
 <Layout title="/home/revv/experience">
   <main>
     <div class="container flex px-4 mx-auto my-24 h-full max-w-5xl">
       <div class="w-full">
-        <h1 class="text-secondary-300 text-2xl font-bold text-start mb-8">
-          <span class="text-accent font-bold mr-1"> | </span>
-          Experience
-        </h1>
-        <div class="mb-5">
-          <section class="py-5"></section>
-        </div>
-        <h1 class="text-secondary-300 text-2xl font-bold text-start mb-8">
-          <span class="text-accent font-bold mr-1"> | </span>
-          Certifications & Licenses
-        </h1>
-        <div class="mb-5">
-          <section class="py-5">
-            <h2 class="text-secondary-200 text-lg font-bold">
-              <span class="text-accent font-bold">🞄</span> Web Developer
-            </h2>
-            <p class="text-secondary-100 text-base">
-              <span class="text-secondary-100 invisible md:visible md:mr-2">
-                |
-              </span>
-              2020 - 2021
-            </p>
-            <p class="text-secondary-100 text-base">
-              <span class="text-secondary-100 invisible md:visible md:mr-2">
-                |
-              </span>
-              PT. Revv
-            </p>
-            <p class="text-secondary-100 text-base">
-              <span class="text-secondary-100 invisible md:visible md:mr-2">
-                |
-              </span>
-              Jakarta, Indonesia
-            </p>
-            <p class="text-secondary-100 text-base">
-              <span class="text-secondary-100 invisible md:visible md:mr-2">
-                |
-              </span>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </section>
-        </div>
+        {
+          experiences.map(({ title, items }) => (
+            <div key={title}>
+              <h1 class="text-secondary-300 text-2xl font-bold text-start mb-8">
+                <span class="text-accent font-bold mr-1"> | </span>
+                {title}
+              </h1>
+              <div class="mb-5">
+                {items.map((item) => (
+                  <section key={item.title} class="py-5">
+                    <div>
+                      <h2 class="text-secondary-200 text-lg font-bold">
+                        <span class="text-accent font-bold">🞄</span>{" "}
+                        {item.title}
+                      </h2>
+                      <p class="text-secondary-100 text-base">
+                        <span class="text-secondary-100 invisible md:visible md:mr-2">
+                          |
+                        </span>
+                        Date: {item.date}
+                      </p>
+                      <p class="text-secondary-100 text-base">
+                        <span class="text-secondary-100 invisible md:visible md:mr-2">
+                          |
+                        </span>
+                        Company: {item.company}
+                      </p>
+                      {title === "Experience" ? (
+                        <>
+                          <p class="text-secondary-100 text-base">
+                            <span class="text-secondary-100 invisible md:visible md:mr-2">
+                              |
+                            </span>
+                            Location: {item.location}
+                          </p>
+                          {item.description && (
+                            <p class="text-secondary-100 text-base">
+                              <span class="text-secondary-100 invisible md:visible md:mr-2">
+                                |
+                              </span>
+                              {item.description}
+                            </p>
+                          )}
+                        </>
+                      ) : (
+                        <>
+                          {item.credential_id && (
+                            <p class="text-secondary-100 text-base">
+                              <span class="text-secondary-100 invisible md:visible md:mr-2">
+                                |
+                              </span>
+                              Credential ID: {item.credential_id}
+                            </p>
+                          )}
+                          {item.credential_url && (
+                            <p class="text-secondary-100 text-base">
+                              <span class="text-secondary-100 invisible md:visible md:mr-2">
+                                |
+                              </span>
+                              <a
+                                href={item.credential_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-accent"
+                              >
+                                Credential Url
+                              </a>
+                            </p>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </main>
-  <Footer />
 </Layout>
+<Footer />
