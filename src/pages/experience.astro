@@ -50,6 +50,9 @@ export const experiences = [
       },
     ],
   },
+];
+
+export const certifications = [
   {
     title: "Certifications & Licenses",
     items: [
@@ -116,14 +119,14 @@ export const experiences = [
       <div class="w-full">
         {
           experiences.map(({ title, items }) => (
-            <div key={title}>
+            <div>
               <h1 class="text-secondary-300 text-2xl font-bold text-start mb-8">
                 <span class="text-accent font-bold mr-1"> | </span>
                 {title}
               </h1>
               <div class="mb-5">
                 {items.map((item) => (
-                  <section key={item.title} class="py-5">
+                  <section class="py-5">
                     <div>
                       <h2 class="text-secondary-200 text-lg font-bold">
                         <span class="text-accent font-bold">🞄</span>{" "}
@@ -141,7 +144,7 @@ export const experiences = [
                         </span>
                         Company: {item.company}
                       </p>
-                      {title === "Experience" ? (
+                      {title === "Experience" && (
                         <>
                           <p class="text-secondary-100 text-base">
                             <span class="text-secondary-100 invisible md:visible md:mr-2">
@@ -158,32 +161,63 @@ export const experiences = [
                             </p>
                           )}
                         </>
-                      ) : (
-                        <>
-                          {item.credential_id && (
-                            <p class="text-secondary-100 text-base">
-                              <span class="text-secondary-100 invisible md:visible md:mr-2">
-                                |
-                              </span>
-                              Credential ID: {item.credential_id}
-                            </p>
-                          )}
-                          {item.credential_url && (
-                            <p class="text-secondary-100 text-base">
-                              <span class="text-secondary-100 invisible md:visible md:mr-2">
-                                |
-                              </span>
-                              <a
-                                href={item.credential_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-accent"
-                              >
-                                Credential Url
-                              </a>
-                            </p>
-                          )}
-                        </>
+                      )}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+        {
+          certifications.map(({ title, items }) => (
+            <div>
+              <h1 class="text-secondary-300 text-2xl font-bold text-start mb-8">
+                <span class="text-accent font-bold mr-1"> | </span>
+                {title}
+              </h1>
+              <div class="mb-5">
+                {items.map((item) => (
+                  <section class="py-5">
+                    <div>
+                      <h2 class="text-secondary-200 text-lg font-bold">
+                        <span class="text-accent font-bold">🞄</span>{" "}
+                        {item.title}
+                      </h2>
+                      <p class="text-secondary-100 text-base">
+                        <span class="text-secondary-100 invisible md:visible md:mr-2">
+                          |
+                        </span>
+                        Date: {item.date}
+                      </p>
+                      <p class="text-secondary-100 text-base">
+                        <span class="text-secondary-100 invisible md:visible md:mr-2">
+                          |
+                        </span>
+                        Company: {item.company}
+                      </p>
+                      {item.credential_id && (
+                        <p class="text-secondary-100 text-base">
+                          <span class="text-secondary-100 invisible md:visible md:mr-2">
+                            |
+                          </span>
+                          Credential ID: {item.credential_id}
+                        </p>
+                      )}
+                      {item.credential_url && (
+                        <p class="text-secondary-100 text-base">
+                          <span class="text-secondary-100 invisible md:visible md:mr-2">
+                            |
+                          </span>
+                          <a
+                            href={item.credential_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-accent"
+                          >
+                            Credential Url
+                          </a>
+                        </p>
                       )}
                     </div>
                   </section>
