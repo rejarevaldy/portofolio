@@ -26,22 +26,22 @@ const { title } = Astro.props;
   </head>
 
   <body class="bg-primary-100 font-primary scrollbar-hide md:scrollbar-default">
-    <Header title={title}>
-      <slot />
-      <script>
-        function init() {
-          document
-            .getElementById("menu-toggle")
-            ?.addEventListener("click", function () {
-              const mobileMenu = document.getElementById("mobile-menu");
-              if (mobileMenu) {
-                mobileMenu.classList.toggle("hidden");
-              }
-            });
-        }
-        init();
-        document.addEventListener("astro:after-swap", init);
-      </script>
-    </Header>
+    <Header title={title} />
+
+    <slot />
+    <script>
+      function init() {
+        document
+          .getElementById("menu-toggle")
+          ?.addEventListener("click", function () {
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (mobileMenu) {
+              mobileMenu.classList.toggle("hidden");
+            }
+          });
+      }
+      init();
+      document.addEventListener("astro:after-swap", init);
+    </script>
   </body>
 </html>
