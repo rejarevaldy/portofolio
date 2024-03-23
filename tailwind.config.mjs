@@ -37,5 +37,6 @@ export default {
     iconsPlugin({
       collections: getIconCollections(["lucide"]),
     }),
+    require("tailwind-scrollbar-hide"),
   ],
 };

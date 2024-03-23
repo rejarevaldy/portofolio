@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Main from "../../components/Main.astro";
+import { Image } from "astro:assets";
+
+const posts = await getCollection("post");
+type Props = CollectionEntry<"post">;
+
+const { slug } = Astro.params;
+const post = posts.find((page) => page.slug === slug);
+if (!post) return Astro.redirect("/404");
+
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <h1 class="text-secondary-300">{post.data.title}</h1>
+  <Image
+    src={post.data.image}
+    alt=""
+    width={1024}
+    height={600 / 1.5}
+    class="rounded-2xl shadow-xl mb-4 aspect-thumbnail object-cover"
+  />
+  <Content />
+</Layout>
