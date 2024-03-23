@@ -1,10 +1,18 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <header>
   <nav class="relative container mx-auto px-10 py-6">
     <div class="flex items-center justify-between">
       <div class="pt-2">
         <h1 class="text-secondary-300 font-bold hover:text-accent">
           <a href="/">
-            /home/revv/<span class="animate-blink">_</span>
+            {title}<span class="animate-blink">_</span>
           </a>
         </h1>
       </div>
