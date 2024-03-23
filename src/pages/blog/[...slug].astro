@@ -1,13 +1,10 @@
 ---
-import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import Main from "../../components/Main.astro";
 import { Image } from "astro:assets";
 
-const posts = await getCollection("post");
-type Props = CollectionEntry<"post">;
+const posts = await getCollection("posts");
+type Props = CollectionEntry<"posts">;
 
 const { slug } = Astro.params;
 const post = posts.find((page) => page.slug === slug);
@@ -17,13 +14,25 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <h1 class="text-secondary-300">{post.data.title}</h1>
-  <Image
-    src={post.data.image}
-    alt=""
-    width={1024}
-    height={600 / 1.5}
-    class="rounded-2xl shadow-xl mb-4 aspect-thumbnail object-cover"
-  />
-  <Content />
+  <div class="container flex px-4 mx-auto my-24 h-full max-w-5xl">
+    <div class="w-full">
+      <div class="mb-5">
+        <h1 class="text-secondary-300 text-4xl">{post.data.title}</h1>
+        <p class="text-secondary-200">{post.data.date}</p>
+      </div>
+
+      <Image
+        src={post.data.image}
+        alt=""
+        width={1024}
+        height={600 / 1.5}
+        class="rounded-2xl shadow-xl mb-5 aspect-thumbnail object-cover"
+      />
+      <div
+        class="text-secondary-200 prose prose-neutral min-w-full prose-headings:text-secondary-300"
+      >
+        <Content />
+      </div>
+    </div>
+  </div>
 </Layout>

@@ -38,5 +38,6 @@ export default {
       collections: getIconCollections(["lucide"]),
     }),
     require("tailwind-scrollbar-hide"),
+    require("@tailwindcss/typography"),
   ],
 };
