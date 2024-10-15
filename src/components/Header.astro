@@ -1,23 +1,23 @@
 ---
 interface Props {
-  title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <header>
-  <nav class="relative container mx-auto px-10 py-6">
-    <div class="flex items-center justify-between">
-      <div class="pt-2">
-        <h1 class="text-secondary-300 font-bold hover:text-accent">
-          <a href="/">
-            {title}<span class="animate-blink">_</span>
-          </a>
-        </h1>
-      </div>
-      <div class="hidden md:flex space-x-6 text-secondary-200 items-center">
-        <a
+	<nav class="relative container mx-auto px-10 py-6">
+		<div class="flex items-center justify-between">
+			<div class="pt-2">
+				<h1 class="text-secondary-300 font-bold hover:text-accent">
+					<a href="/">
+						{title}<span class="animate-blink">_</span>
+					</a>
+				</h1>
+			</div>
+			<div class="hidden md:flex space-x-6 text-secondary-200 items-center">
+				<!-- <a
           href="/blog"
           class="hover:text-accent duration-200 ease-in-out transition-all"
           >Blog</a
@@ -31,76 +31,76 @@ const { title } = Astro.props;
           href="/experience"
           class="hover:text-accent duration-200 ease-in-out transition-all"
           >Experience</a
-        >
-        <span class="text-secondary-100"> | </span>
-        <a
-          href="https://github.com/rejarevaldy"
-          target="_blank"
-          class="flex items-center h-full hover:text-accent"
-        >
-          <i class="i-lucide-github w-4.5 h-4.5"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/rejarevaldyf/"
-          target="_blank"
-          class="flex items-center h-full hover:text-accent"
-        >
-          <i class="i-lucide-linkedin w-4.5 h-4.5"></i>
-        </a>
-        <a
-          href="mailto:rejarevaldyf@gmail.com"
-          target="_blank"
-          class="flex items-center h-full hover:text-accent"
-        >
-          <i class="i-lucide-mail w-4.5 h-4.5"></i>
-        </a>
-      </div>
-      <div class="md:hidden">
-        <button
-          id="menu-toggle"
-          class="text-secondary-300 focus:outline-none flex items-center h-full"
-        >
-          <i class="i-lucide-gantt-chart w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden bg-primary-100 text-secondary-200 py-2 absolute w-full z-30 px-10 h-full"
-  >
-    <a
-      href="/blog"
-      class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
-      >Blog</a
-    >
-    <a
-      href="/projects"
-      class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
-      >Project</a
-    >
-    <a
-      href="/experience"
-      class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
-      >Experience</a
-    >
-    <a
-      href="https://github.com/rejarevaldy"
-      target="_blank"
-      class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
-      >Github</a
-    >
-    <a
-      href="https://www.linkedin.com/in/rejarevaldyf/"
-      target="_blank"
-      class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
-      >Linkedin</a
-    >
-    <a
-      href="mailto:rejarevaldyf@gmail.com"
-      target="_blank"
-      class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
-      >Mail</a
-    >
-  </div>
+        > -->
+				<span class="text-secondary-100"> | </span>
+				<a
+					href="https://github.com/rejarevaldy"
+					target="_blank"
+					class="flex items-center h-full hover:text-accent"
+				>
+					<i class="i-lucide-github w-4.5 h-4.5"></i>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/rejarevaldyf/"
+					target="_blank"
+					class="flex items-center h-full hover:text-accent"
+				>
+					<i class="i-lucide-linkedin w-4.5 h-4.5"></i>
+				</a>
+				<a
+					href="mailto:rejarevaldyf@gmail.com"
+					target="_blank"
+					class="flex items-center h-full hover:text-accent"
+				>
+					<i class="i-lucide-mail w-4.5 h-4.5"></i>
+				</a>
+			</div>
+			<div class="md:hidden">
+				<button
+					id="menu-toggle"
+					class="text-secondary-300 focus:outline-none flex items-center h-full"
+				>
+					<i class="i-lucide-gantt-chart w-6 h-6"></i>
+				</button>
+			</div>
+		</div>
+	</nav>
+	<div
+		id="mobile-menu"
+		class="hidden md:hidden bg-primary-100 text-secondary-200 py-2 absolute w-full z-30 px-10 h-full"
+	>
+		<a
+			href="/blog"
+			class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
+			>Blog</a
+		>
+		<a
+			href="/projects"
+			class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
+			>Project</a
+		>
+		<a
+			href="/experience"
+			class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
+			>Experience</a
+		>
+		<a
+			href="https://github.com/rejarevaldy"
+			target="_blank"
+			class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
+			>Github</a
+		>
+		<a
+			href="https://www.linkedin.com/in/rejarevaldyf/"
+			target="_blank"
+			class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
+			>Linkedin</a
+		>
+		<a
+			href="mailto:rejarevaldyf@gmail.com"
+			target="_blank"
+			class="block py-3 hover:text-accent duration-200 ease-in-out transition-all"
+			>Mail</a
+		>
+	</div>
 </header>
